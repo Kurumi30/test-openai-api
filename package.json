@@ -1,0 +1,23 @@
+{
+  "name": "openai",
+  "version": "1.0.0",
+  "description": "Testando a API da openai",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "api",
+    "typescript",
+    "ia"
+  ],
+  "author": "Kurumi30",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1"
+  }
+}
