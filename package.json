@@ -11,12 +11,13 @@
     "javascript",
     "nodejs",
     "api",
-    "typescript",
+    "openai",
     "ia"
   ],
   "author": "Kurumi30",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^5.2.0",
     "dotenv": "^16.0.3",
     "openai": "^3.2.1"
   }
