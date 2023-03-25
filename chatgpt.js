@@ -1,6 +1,4 @@
-import { color } from "./functions/app.js"
-import { userInterface } from "./functions/app.js"
-import { openai } from "./functions/app.js"
+import { color, userInterface, openai } from "./functions/app.js"
 
 userInterface.prompt()
 userInterface.on("line", async input => {

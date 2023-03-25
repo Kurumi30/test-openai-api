@@ -1,6 +1,4 @@
-import { color } from "./functions/app.js"
-import { userInterface } from "./functions/app.js"
-import { openai } from "./functions/app.js"
+import { color, userInterface, openai } from "./functions/app.js"
 
 async function start() {
     const question = await new Promise(resolve => {
@@ -16,7 +14,6 @@ async function start() {
             response_format: "url",
             size: "512x512"
         })
-
         const { data } = res.data
         const response = color(data[0].url, "blue")
 
