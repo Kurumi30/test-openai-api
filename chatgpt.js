@@ -1,20 +1,6 @@
-import { config } from "dotenv"
-import { Configuration, OpenAIApi } from "openai"
-import readline from "readline"
 import { color } from "./functions/app.js"
-
-config()
-
-const key = process.env.API_KEY
-const configuration = new Configuration({
-    apiKey: key
-})
-const openai = new OpenAIApi(configuration)
-
-const userInterface = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
+import { userInterface } from "./functions/app.js"
+import { openai } from "./functions/app.js"
 
 userInterface.prompt()
 userInterface.on("line", async input => {
