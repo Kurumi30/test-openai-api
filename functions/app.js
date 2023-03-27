@@ -7,8 +7,7 @@ import { link } from "fs"
 
 config()
 
-export const key = process.env.API_KEY
-
+const key = process.env.API_KEY
 const configuration = new Configuration({
     apiKey: key
 })
@@ -34,12 +33,10 @@ export async function shorten(URL) {
         },
         body: JSON.stringify({ long_url: URL })
     }
-
-    await fetch(apiUrl, options)
+    const response = await fetch(apiUrl, options)
         .then(response => response.json())
-        .then(data => {
-            const shortUrl = data.link
+        .then(data => data.link)
+        .catch(error => console.log(error))
 
-        }).catch(error => console.log(error))
-
+    return response
 }
