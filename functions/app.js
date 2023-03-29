@@ -43,5 +43,9 @@ export async function shorten(URL) {
 
 export const exitMessage = () => {
     console.log(color("Saindo...", "redBright"))
-    process.exit()
+
+    setTimeout(() => {
+        console.clear()
+        process.exit()
+    }, 3000)
 }  

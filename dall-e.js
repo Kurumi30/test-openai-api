@@ -1,4 +1,10 @@
-import { color, userInterface, openai, shorten, exitMessage } from "./functions/app.js"
+import {
+    color,
+    userInterface,
+    openai,
+    shorten,
+    exitMessage
+} from "./functions/app.js"
 
 async function start() {
     const question = await new Promise(resolve => {
@@ -9,7 +15,7 @@ async function start() {
 
     userInterface.question(question, async () => {
         // console.clear()
-        if(question === "exit") return exitMessage()
+        if (question === "exit") return exitMessage()
 
         const res = await openai.createImage({
             prompt: question,
