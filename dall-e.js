@@ -14,8 +14,7 @@ async function start() {
     })
 
     userInterface.question(question, async () => {
-        // console.clear()
-        if (question === "exit") return exitMessage()
+        if (question === "/exit") return exitMessage()
 
         const res = await openai.createImage({
             prompt: question,
