@@ -3,18 +3,13 @@ import {
     userInterface,
     openai,
     shorten,
-    exitMessage
+    exitMessage,
+    msg
 } from "./functions/app.js"
 
-async function start() {
-    const question = await new Promise(resolve => {
-        userInterface.question("Digite o comando: ", answer => {
-            resolve(answer)
-        })
-    })
-
-    userInterface.question(question, async () => {
-        if (question === "/exit") return exitMessage()
+(async function start() {
+    userInterface.question("Digite o comando: ", async (question) => {
+        if (msg.includes(question.toLowerCase())) return exitMessage()
 
         const res = await openai.createImage({
             prompt: question,
@@ -27,7 +22,7 @@ async function start() {
         const response = color(shortLink, "blue")
 
         console.log(`A imagem foi gerada com sucesso! A URL da imagem é: ${response}`)
-    })
-}
 
-start()
+        start()
+    })
+})()

@@ -2,12 +2,13 @@ import {
     color,
     userInterface,
     openai,
-    exitMessage
+    exitMessage,
+    msg
 } from "./functions/app.js"
 
 userInterface.prompt()
 userInterface.on("line", async input => {
-    if (input === "/exit") return exitMessage()
+    if (msg.includes(input.toLowerCase())) return exitMessage()
 
     const res = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",

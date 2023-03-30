@@ -1,8 +1,8 @@
 import { config } from "dotenv"
 import { Configuration, OpenAIApi } from "openai"
 import chalk from "chalk"
-import readline from "readline"
 import fetch from "node-fetch"
+import readline from "readline"
 
 config()
 
@@ -41,6 +41,8 @@ export async function shorten(URL) {
     return response
 }
 
+export const msg = ["exit", "sair", "close", "/exit", "/sair", "/close"]
+
 export const exitMessage = () => {
     console.log(color("Saindo...", "redBright"))
 
@@ -49,4 +51,3 @@ export const exitMessage = () => {
         process.exit()
     }, 3000)
 }
-  
