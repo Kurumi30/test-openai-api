@@ -52,10 +52,12 @@ export async function shorten(URL) {
     return response
 }
 
-export const msg = ["exit", "sair", "close", "quit", "/exit", "/sair", "/close", "/quit"]
+export let msg = ["exit", "sair", "close", "quit", "encerrar", "/exit", "/sair", "/close", "/quit", "/encerrar"]
 
-export const exitMessage = () => {
-    console.log(color("Saindo...", "redBright"))
+let exitMessage = color("Saindo...", "redBright")
+
+export const exitAction = () => {
+    console.log(exitMessage)
 
     setTimeout(() => {
         console.clear()
