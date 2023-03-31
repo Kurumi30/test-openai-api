@@ -13,9 +13,9 @@ import {
 
         const res = await openai.createImage({
             prompt: question,
-            n: 1,
-            response_format: "url",
-            size: "512x512"
+            n: 1, // 1 - 10
+            response_format: "url", // b64_json
+            size: "512x512" // 256 x 256, 1024 x 1024
         })
         const { data } = res.data
         const shortLink = await shorten(data[0].url)

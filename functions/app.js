@@ -8,6 +8,17 @@ config()
 
 const key = process.env.API_KEY
 const token = process.env.TOKEN
+
+if (!key || !token) {
+    console.error(color("Verifique se o arquivo .env foi preenchido corretamente, com todas as variáveis de ambiente!", "red"))
+    //throw new Error()
+    console.log(color("Saindo...", "redBright"))
+    setTimeout(() => {
+        console.clear()
+        process.exit(1)
+    }, 3000)
+}
+
 const configuration = new Configuration({
     apiKey: key
 })
@@ -41,7 +52,7 @@ export async function shorten(URL) {
     return response
 }
 
-export const msg = ["exit", "sair", "close", "/exit", "/sair", "/close"]
+export const msg = ["exit", "sair", "close", "quit", "/exit", "/sair", "/close", "/quit"]
 
 export const exitMessage = () => {
     console.log(color("Saindo...", "redBright"))
@@ -49,5 +60,5 @@ export const exitMessage = () => {
     setTimeout(() => {
         console.clear()
         process.exit()
-    }, 3000)
+    }, 2000)
 }

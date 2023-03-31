@@ -27,11 +27,11 @@ cd test-openai-api
 npm i
 ```
 
-4. Crie um arquivo `.env` na raiz do projeto com as variáveis de ambiente.
+4. Preencha o arquivo `.env` com as variáveis de ambiente. (Altere o nome do arquivo **.example.env** para **.env**).
 
 ```bash
-API_KEY="SUA_API_KEY"
-TOKEN="SEU_TOKEN"
+API_KEY=SUA_API_KEY
+TOKEN=SEU_TOKEN
 ```
 
 5. Execute os seguintes comandos no seu terminal
@@ -42,8 +42,15 @@ node chatgpt // Para testar o chat
 node dall-e // Para gerar uma imagem
 ```
 
-6. Para sair do chat, digite
+6. Para sair do chat, pode usar um dos comandos abaixo
 
 ```bash
 /exit
+/sair
+/close
+/quit
+exit
+sair
+close
+quit
 ```
