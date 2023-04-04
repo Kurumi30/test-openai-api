@@ -12,7 +12,7 @@ const token = process.env.TOKEN
 if (!key || !token) {
     console.error(color("Verifique se o arquivo .env foi preenchido corretamente, com todas as variáveis de ambiente!", "red"))
     //throw new Error()
-    console.log(color("Saindo...", "redBright"))
+    console.log(exitMessage)
     setTimeout(() => {
         console.clear()
         process.exit(1)
